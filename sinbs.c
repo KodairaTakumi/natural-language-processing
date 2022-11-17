@@ -5,14 +5,17 @@
   int chek(char ch){
   	int ans;
   	if(isprint(ch)){
-  		ans = 1;
-  	} else if(iscntrl(ch)){
+		ans = 1;
+	} else if(iscntrl(ch)){
   		ans = 1;
   	}else {
   		ans = 0;
   	}
   	return ans;
   }
+
+
+
 int main(void){
   
   char ch;
@@ -29,7 +32,7 @@ int main(void){
   }
   
   fclose(fp);
- 
+ puts("");
   return 0;
 }
 
