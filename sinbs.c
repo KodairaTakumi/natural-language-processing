@@ -5,10 +5,14 @@
 
 int chek(char ch){
 	int ans;
-	if(isprint(ch)){
+	if(islower(ch)){
 		ans = 1;
-	} else if(iscntrl(ch)){
+	} else if(isupper(ch)){
+		ans = 1;
+	} else if(ch == '\n'){
   		ans = 1;
+	}else if(ch == ' '){
+		ans = 1;
   	}else {
   		ans = 0;
   	}
