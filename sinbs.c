@@ -5,9 +5,9 @@
 
 int chek(char ch){
 	int ans;
-	if(islower(ch)){
+	if(isalpha(ch)){
 		ans = 1;
-	} else if(isupper(ch)){
+	} else if((ch)){
 		ans = 1;
 	} else if(ch == '\n'){
   		ans = 1;
