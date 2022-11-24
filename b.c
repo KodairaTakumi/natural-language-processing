@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 int main(void){
-	char a = '.';
+	int a = 1;
 	
-	printf("%d",a);
+	printf("%c",a);
 	
 	return 0;
 }

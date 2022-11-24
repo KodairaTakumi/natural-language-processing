@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<ctype.h>
 #include <stdlib.h>
+#include <stdlib.h>
 
 int chek(char ch){
 	int num;
@@ -20,16 +21,31 @@ int chek(char ch){
 	return num;
 }
 
+int miketxt(char a[],int size){
+	int i;
+	for(i=0;i<size;i++){
+		int j = rand() % size;
+		int t = a[i];
+		a[i] = a[j];
+		a[j] = t;
+	}
+	return 0;
+}
+	
+
 
 
 int main(){
 	char ch, mb;
 	FILE *op;
 	FILE *co;
+	FILE *ot;
 	int dt[29] = {};
 	char ab[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-	int eng,i,nb;
+	char tx[999999] = {};
+	int eng,i,nb,j=0;
 	double tt;
+	int k = 0;
 	
 	op = fopen("output.txt", "r");
 	
@@ -65,8 +81,35 @@ int main(){
 	fprintf(co, "supe-su = %d\n", dt[27]);
 	fclose(co);
 	
+	
+	for(i=0;i<=25;i++){
+		j += dt[i] / 100;
+		for(k;k<=j;k++){
+			tx[k] = ab[i];
+		}
+	}
+	
+	j += dt[26] / 100;
+	for(k;k<=j;k++){
+		tx[k] = '\n';
+	}
+	j += dt[27] / 100;
+	for(k;k<= j;k++){
+		tx[k] = ' ';
+	}
+	
+	miketxt(tx,j);
+	ot = fopen("onetxt.txt","w");
+	for(i=0;i<=1000;i++){
+		fprintf(ot,"%c",tx[i]);
+	}
+	fprintf(ot,"\n");
+	fclose(ot);
+	
 	return 0;
 }
+
+
 	
 	
 	
