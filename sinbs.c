@@ -5,9 +5,9 @@
 
 int chek(char ch){
 	int ans;
-	if(isalpha(ch)){
+	if(isupper(ch)){
 		ans = 1;
-	} else if((ch)){
+	} else if(islower(ch)){
 		ans = 1;
 	} else if(ch == '\n'){
   		ans = 1;
@@ -32,11 +32,10 @@ int main(void){
 
 	while((ch = fgetc(fp)) != EOF){
 		if(chek(ch)){
-			fprintf(op, "%c",ch);
-		} else {
-			fprintf(op, " ");
+			fprintf(op,"%c",ch);
+			
 		}
-	}
+	} 
   
 	fclose(fp);
 	puts("");

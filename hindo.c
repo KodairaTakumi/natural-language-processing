@@ -29,6 +29,7 @@ int main(){
 	int dt[29] = {};
 	char ab[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 	int eng,i,nb;
+	double tt;
 	
 	op = fopen("output.txt", "r");
 	
@@ -48,14 +49,17 @@ int main(){
 			mb = ab[i];
 			ab[i] = ab[i+1];
 			ab[i+1] = mb;
-			i = 0;
+			i = -1;
 		}
+	}
+	for(i=0;i<=24;i++){
+		tt += dt[i];
 	}
 	
 	co = fopen("count.txt", "w");
 	
 	for(i=0;i<=25;i++){
-		fprintf(co, "%c = %d\n", ab[i],dt[i]);
+		fprintf(co, "%c = %5d  %8f%%\n", ab[i],dt[i],dt[i] / tt);
 	}
 	fprintf(co, "kaigyou = %d\n", dt[26]);
 	fprintf(co, "supe-su = %d\n", dt[27]);
