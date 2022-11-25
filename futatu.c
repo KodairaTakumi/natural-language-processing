@@ -61,8 +61,7 @@ int one(char b[],int i){
 			}
 		}
 	}
-	i += 1;
-	printf("%d\n",k);
+	
 	return k;
 }
 int miketxt(char a[],int size){
@@ -250,7 +249,7 @@ int main(void){
 	tt = fopen("twotxt.txt","w");
 	
 	ch2 = ' ';
-	for(k=0;k<=1000;k++){
+	for(k=0;k<=10000;k++){
 		fprintf(tt,"%c",ch2);
 		switch(ch2){
 			case 'a':
@@ -364,7 +363,6 @@ int main(void){
 			case ' ':
 				ch2 = ssw[sswn];
 				sswn += 1;
-				printf("\n\n%d",sswn);
 			break;
 		}
 	}
