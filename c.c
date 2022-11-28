@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main(void){
-	int z = 12;
+	int z = '\00 ';
 	char zz = 'a'+ (z % 28);
 	
 	zz = 'J';

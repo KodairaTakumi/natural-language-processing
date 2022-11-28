@@ -61,7 +61,7 @@ int one(char b[],int i){
 			}
 		}
 	}
-	
+	i += 1;
 	return k;
 }
 int miketxt(char a[],int size){
@@ -208,7 +208,7 @@ int main(void){
 	for(i=0;i<=763;i++){
 		
 		if(a[i] > 0){
-			fprintf(fu,"  %c%c...%d\n",n1[i],n2[i],a[i]);
+			fprintf(fu,"  %c%c...%d",n1[i],n2[i],a[i]);
 		}
 	}
 	
@@ -249,12 +249,15 @@ int main(void){
 	tt = fopen("twotxt.txt","w");
 	
 	ch2 = ' ';
-	for(k=0;k<=10000;k++){
-		fprintf(tt,"%c",ch2);
+	for(k=0;k<=1000;k++){
+		
 		switch(ch2){
 			case 'a':
 				ch2 = aw[awn];
 				awn += 1;
+				if(ch2 == 0){
+					awn = 0;
+				}
 			break;
 			case 'b':
 				ch2 = bw[bwn];
@@ -263,6 +266,9 @@ int main(void){
 			case 'c':
 				ch2 = cw[cwn];
 				cwn += 1;
+				if(ch2 == 0){
+					cwn = 0;
+				}
 			break;
 			case 'd':
 				ch2 = dw[dwn];
@@ -364,7 +370,12 @@ int main(void){
 				ch2 = ssw[sswn];
 				sswn += 1;
 			break;
+			default:
+				ch2 = ' ';
+			break;
+			
 		}
+		fprintf(tt,"%c",ch2);
 	}
 	
 	fclose(tt);
